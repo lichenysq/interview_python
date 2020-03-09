@@ -443,13 +443,8 @@ http://stackoverflow.com/questions/3394835/args-and-kwargs
 
 “当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。”
 
-我们并不关心对象是什么类型，到底是不是鸭子，只关心行为。
+python鸭子类型的灵活性在于它关注的是这个所调用的对象是如何被使用的，而没有关注对象类型的本身是什么--动态语言的特性之一
 
-比如在python中，有很多file-like的东西，比如StringIO,GzipFile,socket。它们有很多相同的方法，我们把它们当作文件使用。
-
-又比如list.extend()方法中,我们并不关心它的参数是不是list,只要它是可迭代的,所以它的参数可以是list/tuple/dict/字符串/生成器等.
-
-鸭子类型在动态语言中经常使用，非常灵活，使得python不想java那样专门去弄一大堆的设计模式。
 
 ## 13 Python中重载
 
@@ -460,13 +455,10 @@ http://stackoverflow.com/questions/3394835/args-and-kwargs
 1. 可变参数类型。
 2. 可变参数个数。
 
-另外，一个基本的设计原则是，仅仅当两个函数除了参数类型和参数个数不同以外，其功能是完全相同的，此时才使用函数重载，如果两个函数的功能其实不同，那么不应当使用重载，而应当使用一个名字不同的函数。
-
-好吧，那么对于情况 1 ，函数功能相同，但是参数类型不同，python 如何处理？答案是根本不需要处理，因为 python 可以接受任何类型的参数，如果函数的功能相同，那么不同的参数类型在 python 中很可能是相同的代码，没有必要做成两个不同函数。
-
+那么对于情况 1 ，函数功能相同，但是参数类型不同，python 如何处理？答案是根本不需要处理，因为 python 可以接受任何类型的参数，如果函数的功能相同，那么不同的参数类型在 python 中很可能是相同的代码，没有必要做成两个不同函数。
 那么对于情况 2 ，函数功能相同，但参数个数不同，python 如何处理？大家知道，答案就是缺省参数。对那些缺少的参数设定为缺省参数即可解决问题。因为你假设函数功能相同，那么那些缺少的参数终归是需要用的。
 
-好了，鉴于情况 1 跟 情况 2 都有了解决方案，python 自然就不需要函数重载了。
+所以 ##python 不需要函数重载##
 
 ## 14 新式类和旧式类
 
@@ -671,7 +663,7 @@ reduce函数是对一个序列的每个项迭代调用函数，下面是求3的�
 ```
 
 ## 23 Python里的拷贝
-
+栈内存 指向 堆内存    
 引用和copy(),deepcopy()的区别
 
 ```python
@@ -743,7 +735,7 @@ is是对比地址,==是对比值
 * readlines   读取整个文件到一个迭代器以供我们遍历
 
 ## 28 Python2和3的区别
-推荐：[Python 2.7.x 与 Python 3.x 的主要差异](http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/)
+默认utf-8    print  with   range
 
 ## 29 super init
 super() lets you avoid referring to the base class explicitly, which can be nice. But the main advantage comes with multiple inheritance, where all sorts of fun stuff can happen. See the standard docs on super if you haven't already.
